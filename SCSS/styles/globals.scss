@@ -1,0 +1,26 @@
+@mixin organize-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: $base-color;
+}
+
+.button-basic{
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+    transition: .4s;
+}

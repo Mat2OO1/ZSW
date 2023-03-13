@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
+            <div class="container">
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">Navbar</a>
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" datatarget="#basicExampleNav"
+                    aria-controls="basicExampleNav" aria-expanded="false" arialabel="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="workers.html">Employees</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" datatoggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu dropdown-primary" arialabelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Links -->
+                    <form class="form-inline">
+                        <div class="md-form my-0">
+                            <input class="form-control mr-sm2" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+                    </form>
+                </div>
+                <!-- Collapsible content -->
+            </div>
+        </nav>
+        <br class="my-5">
+        <br class="my-5">
+        <br class="my-5">
+
+        <main class="mt-5">
+            <div class="container">
+                <section id="carouselworkers"></section>
+                    <!--Grid column-->
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="mb-3">Our Employees</h3>
+                      </div>
+                      <div class="col-6 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                          <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                          <i class="fa fa-arrow-right"></i>
+                        </a>
+                      </div>
+                      <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <div class="row">
+                                <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                    <img class="img-fluid" src="img/trip6.jpeg">
+                                    <div class="card-body">
+                                      <h4 class="card-title">Sarah Jones</h4>
+                                      <p class="card-text">Manager of Accounting
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                    <img class="img-fluid" src="img/trip6.jpeg">
+                                    <div class="card-body">
+                                      <h4 class="card-title">John Smith</h4>
+                                      <p class="card-text">Director of Human Resources
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                    <img class="img-fluid" src="img/trip6.jpeg">
+                                    <div class="card-body">
+                                      <h4 class="card-title">Mike Brown</h4>
+                                      <p class="card-text">Chief Technology Officer
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="row">
+                                <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                    <img class="img-fluid" src="img/trip6.jpeg">
+                                    <div class="card-body">
+                                      <h4 class="card-title">David Williams</h4>
+                                      <p class="card-text">Senior Software Developer
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                    <img class="img-fluid" src="img/trip6.jpeg">
+                                    <div class="card-body">
+                                      <h4 class="card-title">Emily Johnson</h4>
+                                      <p class="card-text">Head of Sales
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                  <div class="card">
+                                    <img class="img-fluid" src="img/trip6.jpeg">
+                                    <div class="card-body">
+                                      <h4 class="card-title">James Anderson</h4>
+                                      <p class="card-text">Chief Financial Officer
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+            </div>
+        </main>

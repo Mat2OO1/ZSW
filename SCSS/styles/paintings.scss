@@ -1,0 +1,50 @@
+hr{
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid $theme-color;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.spacer{
+    height: 5rem;
+}
+
+.details{
+    h2{
+        color: $theme-color;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+
+.paintings{
+    @include organize-flex();
+    justify-content: center;
+    .item{
+        padding: 5%;
+        text-align: center;
+        img{
+            width: auto;
+            height: 300px;
+            animation: fadeIn 5s;
+        }
+
+        p{
+            animation: fadeIn 10s;
+        }
+        button{
+            @extend .button-basic;
+            background-color: $button-color;
+        }
+        button:hover{
+            background-color: $transition-color;
+        -webkit-transition: background-color 0.5s linear;
+        -ms-transition: background-color 0.5s linear;
+        transition: background-color 0.5s linear;
+        }
+    }
+
+}

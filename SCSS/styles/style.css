@@ -1,0 +1,140 @@
+.navbar {
+  background-size: cover;
+  background-position: center;
+}
+.navbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.navbar nav .logo {
+  color: black;
+  font-size: 28px;
+}
+.navbar nav span {
+  color: #254E58;
+}
+.navbar nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
+}
+.navbar nav ul li a {
+  color: #F8F8FF;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar nav ul li a:hover {
+  color: #254E58;
+  transition: 0.3s;
+}
+.navbar nav button {
+  background: #254E58;
+  transition: 0.4s;
+}
+.navbar nav button:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .navbar nav ul {
+    display: none;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #88BDBC;
+}
+
+.button-basic, .paintings .item button, .navbar nav button {
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #254E58;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.spacer {
+  height: 5rem;
+}
+
+.details h2 {
+  color: #254E58;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.paintings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.paintings .item {
+  padding: 5%;
+  text-align: center;
+}
+.paintings .item img {
+  width: auto;
+  height: 300px;
+  -webkit-animation: fadeIn 5s;
+          animation: fadeIn 5s;
+}
+.paintings .item p {
+  -webkit-animation: fadeIn 10s;
+          animation: fadeIn 10s;
+}
+.paintings .item button {
+  background-color: #1d3a42;
+}
+.paintings .item button:hover {
+  background-color: #3e7e5c;
+  transition: background-color 0.5s linear;
+}
+
+.contact {
+  text-align: center;
+}
+.contact ul li {
+  text-align: center;
+  font-size: 30px;
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
+}/*# sourceMappingURL=style.css.map */
