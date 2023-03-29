@@ -41,8 +41,8 @@
 
 <script>
 import axios from "axios";
-import BookForm from "@/components/BookForm.vue";
-import CustomNavbar from "@/components/CustomNavbar.vue";
+import BookForm from "@/components/book/BookForm.vue";
+import CustomNavbar from "@/components/utils/CustomNavbar.vue";
 
 export default {
   name: 'BookTable',

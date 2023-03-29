@@ -6,12 +6,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import './assets/main.css'
-import BookForm from "@/components/BookForm.vue";
-import BookTable from "@/components/BookTable.vue";
-import AuthorForm from "@/components/AuthorForm.vue";
-import AuthorTable from "@/components/AuthorTable.vue";
-import AuthorUpdate from "@/components/AuthorUpdate.vue";
-import BookUpdate from "@/components/BookUpdate.vue";
+import BookForm from "@/components/book/BookForm.vue";
+import BookTable from "@/components/book/BookTable.vue";
+import AuthorForm from "@/components/author/AuthorForm.vue";
+import AuthorTable from "@/components/author/AuthorTable.vue";
+import AuthorUpdate from "@/components/author/AuthorUpdate.vue";
+import BookUpdate from "@/components/book/BookUpdate.vue";
 import Main from "@/components/Main.vue";
 
 const router = createRouter({

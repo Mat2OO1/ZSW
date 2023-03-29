@@ -1,5 +1,5 @@
 <template>
-  <div id="person-form" class="container">
+  <div id="person-form" class="container mt-5">
     <h1>Dodaj nowego autora</h1>
     <form @submit.prevent="handleSubmit">
       <label>Imię</label>

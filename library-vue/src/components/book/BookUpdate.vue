@@ -1,12 +1,12 @@
 <template>
+  <CustomNavbar></CustomNavbar>
   <div id="person-form" class="container">
-    <h1>Dodaj nową książkę</h1>
     <form @submit.prevent="handleSubmit">
       <label>Tytuł</label>
       <input
           v-model="book.title"
           type="text"
-          :class="{ 'has-error': submitting && invalidFirstName }"
+          :class="{ 'has-error': submitting && invalidTitle }"
           @focus="clearStatus"
           @keypress="clearStatus"
       />
@@ -18,12 +18,11 @@
           @focus="clearStatus"
       />
       <label>Autor</label>
-      <select v-model="book.author">
+      <select v-model="book.author.lastName">
         <option
             v-for="a in authors" :key="a.id"
-            @focus="clearStatus"
         >
-          {{a.lastName}}
+          {{ a.lastName }}
         </option>
       </select>
       <p v-if="error && submitting" class="error-message">
@@ -32,24 +31,24 @@
       <p v-if="success" class="success-message">
         Dane poprawnie zapisano
       </p>
-      <button class="btn btn-primary mt-4">Dodaj książkę</button>
+      <button class="btn btn-primary mt-3">Dodaj książkę</button>
     </form>
   </div>
 </template>
 <script>
 import axios from "axios";
+import CustomNavbar from "@/components/utils/CustomNavbar.vue";
 
 export default {
-  name: 'BookForm',
-  props: {
-    booksSource: Array,
-  },
+  name: 'BookUpdate',
+  components: {CustomNavbar},
   data() {
     return {
       submitting: false,
       error: false,
       success: false,
       book: {
+        id: 0,
         title: '',
         pages: '',
         author: {
@@ -57,11 +56,12 @@ export default {
           lastName: '',
         },
       },
-      authors : [],
+      authors: [],
     }
   },
   mounted() {
     this.getAuthors()
+    this.getBook()
   },
   methods: {
 
@@ -75,43 +75,51 @@ export default {
       }
     },
 
+    async getBook() {
+      axios.get(`http://localhost:8080/get/book/${this.bookId()}`)
+          .then(response => {
+            // Obsługa odpowiedzi serwera
+            console.log(response.data);
+            this.book = response.data
+          })
+          .catch(error => {
+            // Obsługa błędów
+            console.error(error);
+          })
+    },
+
     async postData() {
       try {
         const author = this.authors.filter(obj => {
-          return obj.lastName === this.book.author
+          return obj.lastName === this.book.author.lastName
         });
-        const response = await axios.post('http://localhost:8080/post/book', {
+        const response = await axios.patch('http://localhost:8080/patch/book', {
+          id: this.book.id,
           title: this.book.title,
           pages: this.book.pages,
           author: author[0]
         })
+        this.$router.push({ name: 'books'});
         console.log(response.data)
-        const savedBooks = await fetch('http://localhost:8080/get/books')
-        const books = await savedBooks.json()
-        this.booksSource.push(books[books.length - 1])
       } catch (error) {
         console.error(error)
       }
+    },
+
+    bookId() {
+      return this.$route.params.id;
     },
 
     handleSubmit() {
       this.submitting = true
       this.clearStatus()
 
-      if (this.invalidFirstName || this.invalidPages) {
+      if (this.invalidTitle || this.invalidPages) {
         this.error = true
         return
       }
       this.postData()
 
-      this.book = {
-        title: '',
-        pages: '',
-        author: {
-          firstName: '',
-          lastName: '',
-        },
-      }
       this.error = false
       this.success = true
       this.submitting = false
@@ -122,7 +130,7 @@ export default {
     },
   },
   computed: {
-    invalidFirstName() {
+    invalidTitle() {
       return this.book.title === ''
     },
     invalidPages() {

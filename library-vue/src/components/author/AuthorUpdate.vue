@@ -9,7 +9,7 @@
           :class="{ 'has-error': submitting && invalidFirstName }"
           @focus="clearStatus"
           @keypress="clearStatus"
-          :placeholder="savedAuthor.firstName"
+          :placeholder="author.firstName"
       />
       <label>Nazwisko</label>
       <input
@@ -17,7 +17,7 @@
           type="text"
           :class="{ 'has-error': submitting && invalidLastName }"
           @focus="clearStatus"
-          :placeholder="savedAuthor.lastName"
+          :placeholder="author.lastName"
       />
       <p v-if="error && submitting" class="error-message">
         Proszę wypełnić wskazane pola formularza
@@ -41,10 +41,10 @@ export default {
       error: false,
       success: false,
       author: {
+        id: 0,
         firstName: '',
         lastName: '',
       },
-      savedAuthor: {},
     }
   },
   mounted() {
@@ -55,7 +55,7 @@ export default {
     async postData() {
       try {
         const response = await axios.patch('http://localhost:8080/patch/author', {
-              id: this.savedAuthor.id,
+              id: this.author.id,
               firstName: this.author.firstName,
               lastName: this.author.lastName,
             }
@@ -72,7 +72,9 @@ export default {
           .then(response => {
             // Obsługa odpowiedzi serwera
             console.log(response.data);
-            this.savedAuthor = response.data
+            this.author.id = response.data.id,
+            this.author.firstName = response.data.firstName;
+            this.author.lastName = response.data.lastName;
           })
           .catch(error => {
             // Obsługa błędów

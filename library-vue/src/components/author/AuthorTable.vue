@@ -35,8 +35,8 @@
 
 <script>
 import axios from "axios";
-import AuthorForm from "@/components/AuthorForm.vue";
-import CustomNavbar from "@/components/CustomNavbar.vue";
+import AuthorForm from "@/components/author/AuthorForm.vue";
+import CustomNavbar from "@/components/utils/CustomNavbar.vue";
 
 export default {
   name: 'AuthorTable',
