@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AuthorService implements IAuthorService {
@@ -55,7 +56,14 @@ public class AuthorService implements IAuthorService {
 
     @Override
     public void deleteAuthor(int id) throws EntityNotFoundException {
+        Optional<Author> book = authorsRepo.stream()
+                .filter(b -> b.getId() == id)
+                .findAny();
 
+        if (book.isEmpty()) {
+            throw new EntityNotFoundException();
+        }
+        authorsRepo.removeIf(b -> b.getId() == id);
     }
 
     private boolean validateAuthor(Author author) {

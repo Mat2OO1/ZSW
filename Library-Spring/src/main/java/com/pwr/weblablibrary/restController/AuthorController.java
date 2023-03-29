@@ -48,7 +48,7 @@ public class AuthorController {
         }
     }
 
-    @PatchMapping("/delete/author/{id}")
+    @DeleteMapping("/delete/author/{id}")
     public ResponseEntity<?> deleteAuthor(@PathVariable int id) {
         try {
             authorService.deleteAuthor(id);
